@@ -1,4 +1,4 @@
 # data-structures
 
-### [Stack](Stack)
+### [Stack](stack)
   * A dynamic array stack
