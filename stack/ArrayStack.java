@@ -36,6 +36,10 @@ public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
     }
 
     public boolean isEmpty(){
+        if(this.top == -1){
+            return true;
+        } 
+         
         return false;
     }
 
@@ -66,7 +70,7 @@ public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
         
         return s + "] top";
     }
-    
+
     /**
      * Helper method to see if we need to extend size of stack
      */
