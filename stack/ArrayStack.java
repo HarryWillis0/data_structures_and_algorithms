@@ -70,8 +70,8 @@ public class ArrayStack<T extends Object> implements Stack<T> {
     }
 
     /** 
-     * Add an item to the top of the stack
-     * @return the item
+     * Add an item to the top of the stack, extend capacity if stack is full
+     * @return item
      */
     public T push(T item){
         if(this.isFull()){
@@ -86,7 +86,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
 
     /**
      * Search for item in the stack
-     * @return the distance from the top of the stack of the closest to the top occurence
+     * @return distance from the top of the stack of the closest to the top occurence
      *          -1 if item does not occur on stack
      * @throws exception if stack is empty 
      */
