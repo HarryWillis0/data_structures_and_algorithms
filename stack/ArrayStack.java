@@ -6,8 +6,8 @@ import java.util.Arrays;
  * @author Harry Willis
  */
 
-public class ArrayStack<T> implements Stack<T>{
-    // todo
+public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
+    
     public ArrayStack(){
 
     }
