@@ -5,8 +5,7 @@ import java.util.Arrays;
  * 
  * @author Harry Willis
  */
-
-public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
+public class ArrayStack<T extends Object> implements Stack<T> {
     
     private T[] stack;
 
@@ -14,7 +13,6 @@ public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
 
     private int size;
 
-    
     /** 
      * Build default ArrayStack with size 5
     */
@@ -35,52 +33,125 @@ public class ArrayStack<T extends Comparable <T>> implements Stack<T> {
         this.stack = (T[]) new Object[size];
     }
 
+    /** 
+     * Test if stack empty
+     * @return true if empty, false otherwise
+     */
     public boolean isEmpty(){
+        if(this.top == -1){
+            return true;
+        } 
         return false;
     }
 
+    /**
+     * Return item at top of stack without removing it
+     * @return item at the top of stack
+     * @throws exception if stack is empty
+     */
     public T peek() throws Exception {
-    
-        return null;
-    }
-
-    public T pop() throws Exception {
-        return null;
-    }
-
-    public T push(T item){
-        return null;
-    } 
-    public int search(T item) throws Exception {
-        return -1;
-    }
-   
-    public String toString(){
-        if(isEmpty()){
-            return "bottom [] top";
+        if(this.isEmpty()){
+            throw new Exception("Stack is empty");
         }
-        String s = "bottom: [" + stack[0];
-        for(int i = 0; i < this.size - 1;i++){
-            s += " " + this.stack[i];
+        return this.stack[this.top];
+    }
+
+    /**
+     * Remove item at top of stack
+     * @return the item at the top of the stack
+     * @throws exception if stack is empty
+     */
+    public T pop() throws Exception {
+        if(this.isEmpty()){
+            throw new Exception("Stack is empty");
+        }
+
+        return this.stack[this.top--];
+    }
+
+    /** 
+     * Add an item to the top of the stack
+     * @return the item
+     */
+    public T push(T item){
+        if(this.isFull()){
+            
+            this.extendCapacity();
         }
         
-        return s + "] top";
+        this.stack[++this.top] = item;
+        
+        return item;
+    } 
+
+    /**
+     * Search for item in the stack
+     * @return the distance from the top of the stack of the closest to the top occurence
+     *          -1 if item does not occur on stack
+     * @throws exception if stack is empty 
+     */
+    public int search(T item) throws Exception {
+        
+        if(this.isEmpty()){
+            throw new Exception("Stack is empty");
+        }
+
+        int dist = 0;
+        int i = this.top;
+        while(i >= 0 && !this.stack[i].equals(item)){
+            dist++;
+            i--;
+        }
+        if (i > -1){
+            return dist;
+        }
+        return i;
     }
-    
+   
+    /** 
+     * Return stack in String form
+     * @return stack in a String
+     */
+    public String toString(){
+        if(this.isEmpty()){
+            return "BOTTOM -- [] -- TOP";
+        }
+        
+        String s = "BOTTOM -- [" + stack[0];
+        for(int i = 1; i < this.top + 1; i++){
+            s += ", " + this.stack[i];
+        }
+        
+        return s + "] -- TOP";
+    }
+
     /**
      * Helper method to see if we need to extend size of stack
      */
     private boolean isFull(){
+        if(this.top == this.size - 1){
+            return true;
+        }
         return false;
-    }
-    private T[] extendCapacity(){
-        return this.stack;
     }
 
     /**
-     * internal testing
+     * Double size of stack
+     * @return the stack
      */
-    public static void main(String[] args){
+    @SuppressWarnings("unchecked")
+    private T[] extendCapacity(){
+        T[] temp = (T[]) new Object[this.size * 2];
         
+        for(int i = 0; i < this.top + 1; i++){
+            temp[i] = this.stack[i];
+        }
+        
+        this.size *= 2;
+        
+        this.stack = temp;
+        
+        return this.stack;
     }
+
 }

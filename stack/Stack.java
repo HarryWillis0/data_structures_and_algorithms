@@ -39,7 +39,8 @@ interface Stack<T>{
     /**
      * search(T item)
      * Search for item in stack
-     * @return index of item in stack
+     * @return the distance from the top of the stack of the closest to the top occurence
+     *      -1 if item does not occur
      * @throws exception if stack is empty
      */
     public int search(T item) throws Exception;
