@@ -31,5 +31,7 @@ public class ArrayStack<T> implements Stack<T>{
     public int search(T item ){
         return -1;
     }
-
+    public String toString(){
+        return null;
+    }
 }
