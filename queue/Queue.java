@@ -18,7 +18,7 @@ interface Queue<T>{
      * @return item removed
      * @throws exception if queue empty
      */
-    public T dequeue() throws Excetpion;
+    public T dequeue() throws Exception;
 
     /**
      * poll()
