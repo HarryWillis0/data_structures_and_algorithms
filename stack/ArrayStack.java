@@ -28,7 +28,7 @@ public class ArrayStack<T> implements Stack<T>{
     public T push(T item){
         return null;
     } 
-    public int search(T item ){
+    public int search(T item) throws Exception {
         return -1;
     }
     public String toString(){
