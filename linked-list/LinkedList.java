@@ -1,9 +1,16 @@
 /**
  * A linked list interface
  * 
- * @author 
+ * @author Harry Willis
  */
 interface LinkedList<T> {
+    /**
+     * add(T item)
+     * Appends item to the end of the list
+     * @param item to be added
+     */
+    public void add(T item);
+    
     /**
      * add(int index, T item)
      * Inserts item into specified position
