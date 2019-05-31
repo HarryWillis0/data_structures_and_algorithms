@@ -5,7 +5,7 @@ import java.util.Arrays;
  * @author Harry Willis
  */
 
-public class ArrayQueue<T extends Object> implements Queue<T>{
+public class ArrayQueue<T> implements Queue<T>{
     
     private T[] queue;
 
@@ -69,6 +69,8 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
             this.queue[i] = this.queue[i + 1];
         }
         
+        this.back--;
+
         return temp;
     }
 
