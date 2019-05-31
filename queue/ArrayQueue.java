@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * An array implementation of a queue
  * 
