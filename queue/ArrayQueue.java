@@ -1,11 +1,9 @@
-import java.util.Arrays;
 /**
  * An array implementation of a queue
  * 
  * @author Harry Willis
  */
-
-public class ArrayQueue<T extends Object> implements Queue<T>{
+public class ArrayQueue<T> implements Queue<T> {
     
     private T[] queue;
 
@@ -16,11 +14,10 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
 
     private int size;
 
-    
     /**
      * Build default ArrayQueue with size 5
      */
-    public ArrayQueue(){
+    public ArrayQueue() {
         this(5);
     }
 
@@ -28,7 +25,7 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * Build ArrayQueue with specified size
      */
     @SuppressWarnings("unchecked")
-    public ArrayQueue(int size){
+    public ArrayQueue(int size) {
         this.front = 0;
         
         this.back = 0;
@@ -43,7 +40,7 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * @param item to be added
      * @return item added
      */
-    public T enqueue(T item){
+    public T enqueue(T item) {
         if(this.back + 1 == this.size){
             this.extendCapacity();
         }
@@ -59,16 +56,18 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * @return item removed
      * @throws exception if queue empty
      */
-    public T dequeue() throws Exception{
-        if(this.back  == 0){
+    public T dequeue() throws Exception {
+        if(this.back == 0) {
             throw new Exception("Queue is empty");
         }
         T temp = this.queue[front];
 
-        for(int i = this.front; i < back; i++){
+        for(int i = this.front; i < back; i++) {
             this.queue[i] = this.queue[i + 1];
         }
         
+        this.back--;
+
         return temp;
     }
 
@@ -78,8 +77,8 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * @return item at the front of queue
      * @throws exception if queue empty
      */
-    public T poll() throws Exception{
-        if(this.back == 0){
+    public T poll() throws Exception {
+        if(this.back == 0) {
             throw new Exception("Queue is empty");
         }
         return this.queue[this.front];
@@ -90,7 +89,7 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * Test if queue is empty
      * @return true if empty, false otherwise
      */
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return back == 0;
     }
 
@@ -99,12 +98,12 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * Put queue in a string
      * @return queue in a string
      */
-    public String toString(){
-        if (this.isEmpty()){
+    public String toString() {
+        if (this.isEmpty()) {
             return "FRONT -- [] -- BACK";
         }
         String s = "FRONT -- [" + this.queue[0];
-        for(int i = 1; i < this.back; i++){
+        for(int i = 1; i < this.back; i++) {
             s += ", " + this.queue[i];
         }
 
@@ -116,7 +115,7 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * A helper method to determine if capacity of the queue must be extended
      * @return true if full, false otherwise
      */
-    private boolean isFull(){
+    private boolean isFull() {
         return this.back + 1 == this.size;
     }
 
@@ -126,10 +125,10 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
      * @return the new queue
      */
     @SuppressWarnings("unchecked")
-    private T[] extendCapacity(){
+    private T[] extendCapacity() {
         T[] temp = (T[]) new Object[this.size * 2];
         
-        for(int i = 0; i < this.back; i++){
+        for(int i = 0; i < this.back; i++) {
             temp[i] = this.queue[i];
         }
         
@@ -139,5 +138,4 @@ public class ArrayQueue<T extends Object> implements Queue<T>{
         
         return this.queue;
     }
-
 }
