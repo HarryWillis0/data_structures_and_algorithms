@@ -16,7 +16,7 @@ interface Stack<T>{
 
     /**
      * peek()
-     * @return item at top of stack, without changing the stack
+     * @return item at top of stack, without removing it
      * @throws exception if stack empty 
      */
     public T peek() throws Exception;
@@ -32,14 +32,14 @@ interface Stack<T>{
     /**
      * push(T item)
      * Add item to top of stack
-     * @return the item
+     * @return item
      */
     public T push(T item);
     
     /**
      * search(T item)
      * Search for item in stack
-     * @return the distance from the top of the stack of the closest to the top occurence
+     * @return distance from the top of the stack of the closest to the top occurence
      *      -1 if item does not occur
      * @throws exception if stack is empty
      */
