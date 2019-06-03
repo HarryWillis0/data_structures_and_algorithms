@@ -44,6 +44,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             Node<T> newNode = new newNode(item, this.tail);
             this.tail = newNode;
         }
+
         this.size++;
     }
     
@@ -60,18 +61,24 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             throw new Exception("Invalid index");
         }
 
-        if(index >= this.size) {
+        //cases: index too big & correct index to append to end of list
+        if(index >= this.size - 1) {
             this.add(item);
             return;
         }
 
         Node<T> temp = this.head;
-        while(temp.next() != null) {
+        while(index-- >= 0 && temp.next()  != null) {
             temp = temp.next();
         }
 
+        Node<T> newNode = new Node<T>(item, temp.prev(), temp);
+
+        // adjust list pointers
+        temp.prev().setNext(newNode);
+        temp.prev().setPrev(newNode);
+
         this.size++;
-        temp = null;
     }
 
     /**
@@ -184,8 +191,6 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             temp = temp.next();
             s += ", " + temp.getData();
         }
-
-        temp = null;
         
         return s += "]";
     }
