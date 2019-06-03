@@ -1,10 +1,31 @@
 /**
  * A linked list interface
  * 
- * @author 
+ * @author Harry Willis
  */
 public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
     
+    private Node<T> head;
+    
+    private Node<T> tail;
+
+    private int size;
+
+    /** 
+     * Construct defualt empty list
+    */
+    public DoublyLinkedList() {
+        this(null);
+    }
+
+    /**
+     * Construct list with specified first item
+     */
+    public DoublyLinkedList(T item) {
+        this.head = new Node<T>(item);
+
+        this.tail = this.head;
+    }
     
     /**
      * add(int index, T item)
@@ -23,7 +44,9 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * Removes all items from list
      */
     public void clear() {
+        this.head = null;
 
+        this.tail = this.head;
     }
 
     /**
@@ -106,7 +129,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @return number of elements in list
      */
     public int size() {
-        return -1;
+        return this.size;
     }
 
     /**
@@ -115,6 +138,20 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @return String representation of list
      */
     public String toString() {
-        return null;
+        if(this.size == 0) {
+            return "[]";
+        }
+
+        String s = "[" + this.head.getData();
+        
+        Node<T> temp = this.head;
+        while(temp.next() != null) {
+            temp = temp.next();
+            s += ", " + temp.getData();
+        }
+
+        temp = null;
+        
+        return s += "]";
     }
 }
