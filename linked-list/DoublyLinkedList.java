@@ -1,5 +1,5 @@
 /**
- * A linked list interface
+ * A doubly linked list implementation
  * 
  * @author Harry Willis
  */
