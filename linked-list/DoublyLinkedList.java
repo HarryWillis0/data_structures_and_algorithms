@@ -25,6 +25,26 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         this.head = new Node<T>(item);
 
         this.tail = this.head;
+
+        this.size = 0;
+    }
+
+    /**
+     * add(T item)
+     * Appends item to the end of the list
+     * @param item to be added
+     */
+    public void add(T item) {
+        // add to the empty list
+        if (this.size == 0) {
+            this.head.setData(item);
+       
+        // add to the nonempty list
+        } else {
+            Node<T> newNode = new newNode(item, this.tail);
+            this.tail = newNode;
+        }
+        this.size++;
     }
     
     /**
@@ -36,7 +56,22 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if invalid index
      */
     public void add(int index, T item) throws Exception {
+        if(index < 0) {
+            throw new Exception("Invalid index");
+        }
 
+        if(index >= this.size) {
+            this.add(item);
+            return;
+        }
+
+        Node<T> temp = this.head;
+        while(temp.next() != null) {
+            temp = temp.next();
+        }
+
+        this.size++;
+        temp = null;
     }
 
     /**
