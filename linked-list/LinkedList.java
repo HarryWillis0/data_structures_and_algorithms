@@ -1,7 +1,7 @@
 /**
  * A linked list interface
  * 
- * @author 
+ * @author Harry Willis
  */
 interface LinkedList<T> {
     /**

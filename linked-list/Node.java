@@ -96,5 +96,4 @@ public class Node<T extends Object> {
     public boolean equal(Node<T> node){
         return this.data == node.data;
     }
-
 }
