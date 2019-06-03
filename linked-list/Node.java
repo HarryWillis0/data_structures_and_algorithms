@@ -49,6 +49,30 @@ public class Node<T extends Object> {
     }
 
     /**
+     * Set data to specified data
+     * @param item to set data to
+     */
+    public void setData(T item) {
+        this.data = item;
+    }
+
+    /**
+     * Set next to specified node
+     * @param node to set next to
+     */
+    public void setNext(Node<T> node) {
+        this.next = node;
+    }
+
+    /**
+     * Set prev to specified node
+     * @param node to set prev to
+     */
+    public void setPrev(Node<T> node) {
+        this.prev = node;
+    }
+
+    /**
      * Retrieve the data stored in a node
      * @return data in node
      */
