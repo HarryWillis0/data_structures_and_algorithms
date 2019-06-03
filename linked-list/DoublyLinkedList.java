@@ -34,6 +34,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * Appends item to the end of the list
      * @param item to be added
      */
+    @SuppressWarnings("unchecked")
     public void add(T item) {
         // add to the empty list
         if (this.size == 0) {
@@ -41,7 +42,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
        
         // add to the nonempty list
         } else {
-            Node<T> newNode = new newNode(item, this.tail);
+            Node<T> newNode = new Node(item, this.tail);
             this.tail = newNode;
         }
 
@@ -67,10 +68,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             return;
         }
 
-        Node<T> temp = this.head;
-        while(index-- >= 0 && temp.next()  != null) {
-            temp = temp.next();
-        }
+        Node<T> temp = this.traverse(index);
 
         Node<T> newNode = new Node<T>(item, temp.prev(), temp);
 
@@ -193,5 +191,21 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         }
         
         return s += "]";
+    }
+
+    /**
+     * Helper method that traverses the list to a specified index
+     * @param index to traverse to
+     * @return node at index
+     * @throws exception if list empty
+     */
+    private Node<T> traverse(int index) {
+        Node<T> temp = this.head;
+        
+        while(index-- >= 0 && temp.next()  != null) {
+            temp = temp.next();
+        }
+        
+        return temp;
     }
 }
