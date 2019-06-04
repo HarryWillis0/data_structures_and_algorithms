@@ -197,7 +197,6 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * Helper method that traverses the list to a specified index
      * @param index to traverse to
      * @return node at index
-     * @throws exception if list empty
      */
     private Node<T> traverse(int index) {
         Node<T> temp = this.head;
