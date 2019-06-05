@@ -184,7 +184,29 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if index invalid or list empty
      */
     public T remove(int index) throws Exception {
-        return null;
+        if (this.size == 0) {
+            throw new Exception("List empty");
+
+        } else if (index < 0 || index >= this.size) {
+            throw new Exception("Invalid index");
+        }
+
+        Node<T> temp = this.traverse(index);
+        // edge cases
+        if (index == 0) {
+            this.head = this.head.next();
+            this.head.setPrev(null);
+        
+        } else if (index == this.size - 1) {
+            this.tail = this.tail.prev();
+            this.tail.setNext(null);
+
+        } else {
+            temp.next().setPrev(temp.prev());
+            temp.prev().setNext(temp.next());
+        }
+        
+        return temp.getData();
     }
 
     /**
