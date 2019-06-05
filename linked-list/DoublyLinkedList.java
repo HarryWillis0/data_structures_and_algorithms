@@ -173,7 +173,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if list empty
      */
     public T peek() throws Exception {
-        return null;
+        return this.head.getData();
     }
 
     /**
