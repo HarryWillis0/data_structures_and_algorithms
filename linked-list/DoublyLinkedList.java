@@ -236,11 +236,25 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
 
     /**
      * swap(int i, int j)
-     * Swaps the elements at positions i and j
+     * Swaps the nodes at positions i and j
      * @throws exception if list empty or invalid indices
      */
     public void swap(int i, int j) throws Exception {
+        if (this.size == 0) {
+            throw new Exception("List empty");
 
+        } else if (i < 0 || i >= this.size || j < 0 || j >= this.size || i == j) {
+            throw new Exception("Invalid index(s)");
+        }
+
+        // temps
+        Node<T> tempI = this.traverse(i);
+        T tempIData = tempI.getData();
+        Node<T> tempJ = this.traverse(j);
+
+        tempI.setData(tempJ.getData());
+        
+        tempJ.setData(tempIData);
     }
 
     /**
