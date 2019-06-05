@@ -236,7 +236,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
 
     /**
      * swap(int i, int j)
-     * Swaps the nodes at positions i and j
+     * Swaps the elements at positions i and j
      * @throws exception if list empty or invalid indices
      */
     public void swap(int i, int j) throws Exception {
@@ -253,7 +253,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         Node<T> tempJ = this.traverse(j);
 
         tempI.setData(tempJ.getData());
-        
+
         tempJ.setData(tempIData);
     }
 
