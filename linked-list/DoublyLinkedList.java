@@ -103,6 +103,18 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @return true if found, false otherwise
      */
     public boolean contains(T item) {
+        if (this.size == 0) {
+            return false;
+        }
+
+        Node<T> temp = this.head;
+        while(temp != null) {
+            if (temp.getData().equals(item)) {
+                return true;
+            } else {
+                temp = temp.next();
+            }
+        }
         return false;
     }
 
