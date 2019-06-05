@@ -63,12 +63,12 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if invalid index
      */
     public void add(int index, T item) throws Exception {
-        if(index < 0) {
+        if (index < 0) {
             throw new Exception("Invalid index");
         }
 
         //cases: index too big & correct index to append to end of list
-        if(index >= this.size - 1) {
+        if (index >= this.size - 1) {
             this.add(item);
             return;
         }
@@ -111,10 +111,12 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         while(temp != null) {
             if (temp.getData().equals(item)) {
                 return true;
+
             } else {
                 temp = temp.next();
             }
         }
+
         return false;
     }
 
@@ -126,7 +128,14 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if list empty or index out of range.
      */
     public T get(int index) throws Exception {
-        return null;
+        if (this.size == 0) {
+            throw new Exception("List empty");
+
+        } else if (index < 0 || index >= this.size) {
+            throw new Exception("Invalid index");
+        }
+
+        return this.traverse(index).getData();
     }   
 
     /**
@@ -197,14 +206,14 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @return String representation of list
      */
     public String toString() {
-        if(this.size == 0) {
+        if (this.size == 0) {
             return "[]";
         }
 
         String s = "[" + this.head.getData();
         
         Node<T> temp = this.head;
-        while(temp.next() != null) {
+        while (temp.next() != null) {
             temp = temp.next();
             s += ", " + temp.getData();
         }
@@ -219,8 +228,12 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      */
     private Node<T> traverse(int index) {
         Node<T> temp = this.head;
+
+        if (index == 0) {
+            temp = this.head;
+        }
         
-        while(index-- >= 0 && temp.next()  != null) {
+        while (index-- > 0 && temp.next()  != null) {
             temp = temp.next();
         }
         
