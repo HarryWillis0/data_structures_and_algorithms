@@ -15,7 +15,11 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * Construct defualt empty list
     */
     public DoublyLinkedList() {
-        this(null);
+        this.head = new Node<T>();
+
+        this.tail = this.head;
+
+        this.size = 0;
     }
 
     /**
@@ -26,7 +30,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
 
         this.tail = this.head;
 
-        this.size = 0;
+        this.size = 1;
     }
 
     /**
@@ -43,6 +47,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         // add to the nonempty list
         } else {
             Node<T> newNode = new Node(item, this.tail);
+            this.tail.setNext(newNode);
             this.tail = newNode;
         }
 
@@ -84,6 +89,8 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * Removes all items from list
      */
     public void clear() {
+        this.size = 0;
+
         this.head = null;
 
         this.tail = this.head;
