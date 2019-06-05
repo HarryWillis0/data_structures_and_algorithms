@@ -109,6 +109,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
 
         Node<T> temp = this.head;
         while(temp != null) {
+            
             if (temp.getData().equals(item)) {
                 return true;
 
@@ -146,6 +147,22 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if list empty
      */
     public int indexOf(T item) throws Exception {
+        if (this.size == 0) {
+            throw new Exception("List empty");
+        }
+
+        Node<T> temp = this.head;
+        int index = 0;
+        while (temp != null) {
+            
+            if (temp.getData().equals(item)) {
+                return index;
+            } else {
+                index++;
+                temp = temp.next();
+            }
+        }
+        
         return -1;
     }
 
