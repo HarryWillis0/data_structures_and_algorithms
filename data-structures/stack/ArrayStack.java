@@ -36,9 +36,10 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @return true if empty, false otherwise
      */
     public boolean isEmpty() {
-        if(this.top == -1) {
+        if (this.top == -1) {
             return true;
         } 
+
         return false;
     }
 
@@ -48,9 +49,10 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @throws exception if stack is empty
      */
     public T peek() throws Exception {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             throw new Exception("Stack is empty");
         }
+
         return this.stack[this.top];
     }
 
@@ -60,7 +62,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @throws exception if stack is empty
      */
     public T pop() throws Exception {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             throw new Exception("Stack is empty");
         }
 
@@ -72,7 +74,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @return item
      */
     public T push(T item) {
-        if(this.isFull()) {
+        if (this.isFull()) {
             this.extendCapacity();
         }
         
@@ -88,20 +90,21 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @throws exception if stack is empty 
      */
     public int search(T item) throws Exception {
-        
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             throw new Exception("Stack is empty");
         }
 
         int dist = 0;
         int i = this.top;
-        while(i >= 0 && !this.stack[i].equals(item)) {
+        while (i >= 0 && !this.stack[i].equals(item)) {
             dist++;
             i--;
         }
+
         if (i > -1) {
             return dist;
         }
+
         return i;
     }
    
@@ -110,12 +113,13 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @return stack in a String
      */
     public String toString() {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             return "BOTTOM -- [] -- TOP";
         }
         
         String s = "BOTTOM -- [" + stack[0];
-        for(int i = 1; i < this.top + 1; i++) {
+        
+        for (int i = 1; i < this.top + 1; i++) {
             s += ", " + this.stack[i];
         }
         
@@ -126,9 +130,10 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * Helper method to see if we need to extend size of stack
      */
     private boolean isFull() {
-        if(this.top == this.size - 1) {
+        if (this.top == this.size - 1) {
             return true;
         }
+        
         return false;
     }
 
@@ -140,7 +145,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
     private T[] extendCapacity() {
         T[] temp = (T[]) new Object[this.size * 2];
         
-        for(int i = 0; i < this.top + 1; i++) {
+        for (int i = 0; i < this.top + 1; i++) {
             temp[i] = this.stack[i];
         }
         
