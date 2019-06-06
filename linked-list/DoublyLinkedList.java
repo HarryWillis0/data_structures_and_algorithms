@@ -108,14 +108,13 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         }
 
         Node<T> temp = this.head;
-        while(temp != null) {
+        while (temp != null) {
             
             if (temp.getData().equals(item)) {
                 return true;
-
-            } else {
-                temp = temp.next();
             }
+
+            temp = temp.next();
         }
 
         return false;
@@ -132,7 +131,9 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         if (this.size == 0) {
             throw new Exception("List empty");
 
-        } else if (index < 0 || index >= this.size) {
+        }
+        
+        if (index < 0 || index >= this.size) {
             throw new Exception("Invalid index");
         }
 
@@ -157,10 +158,10 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             
             if (temp.getData().equals(item)) {
                 return index;
-            } else {
-                index++;
-                temp = temp.next();
-            }
+            } 
+            
+            index++;
+            temp = temp.next();
         }
         
         return -1;
@@ -173,6 +174,10 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
      * @throws exception if list empty
      */
     public T peek() throws Exception {
+        if (this.size == 0) {
+            throw new Exception("List is empty.");
+        }
+
         return this.head.getData();
     }
 
@@ -187,7 +192,9 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         if (this.size == 0) {
             throw new Exception("List empty");
 
-        } else if (index < 0 || index >= this.size) {
+        } 
+        
+        if (index < 0 || index >= this.size) {
             throw new Exception("Invalid index");
         }
 
@@ -221,7 +228,9 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         if (this.size == 0) {
             throw new Exception("List empty");
 
-        } else if (index < 0 || index >= this.size) {
+        }
+        
+        if (index < 0 || index >= this.size) {
             throw new Exception("Invalid index");
         }
 
@@ -296,7 +305,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         Node<T> temp = this.head;
 
         if (index == 0) {
-            temp = this.head;
+            return this.head;
         }
         
         while (index-- > 0 && temp.next()  != null) {
