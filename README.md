@@ -1,10 +1,11 @@
 # data-structures
 
-### [Stack](stack)
-  * A dynamic array stack
+### [Stack](data-structures/stack)
 
-### [Queue](queue)
-  * A dynamic array queue
+### [Queue](data-structures/queue)
 
-### [Linked List](linked-list)
-  * A doubly linked list 
+### [Linked List](data-structures/linked-list)
+
+# algorithms
+
+### [Sorting](algorithms/sorting)
