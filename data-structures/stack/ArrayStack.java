@@ -39,6 +39,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
         if(this.top == -1) {
             return true;
         } 
+
         return false;
     }
 
@@ -51,6 +52,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
         if(this.isEmpty()) {
             throw new Exception("Stack is empty");
         }
+
         return this.stack[this.top];
     }
 
@@ -88,7 +90,6 @@ public class ArrayStack<T extends Object> implements Stack<T> {
      * @throws exception if stack is empty 
      */
     public int search(T item) throws Exception {
-        
         if(this.isEmpty()) {
             throw new Exception("Stack is empty");
         }
@@ -99,9 +100,11 @@ public class ArrayStack<T extends Object> implements Stack<T> {
             dist++;
             i--;
         }
+
         if (i > -1) {
             return dist;
         }
+
         return i;
     }
    
@@ -129,6 +132,7 @@ public class ArrayStack<T extends Object> implements Stack<T> {
         if(this.top == this.size - 1) {
             return true;
         }
+        
         return false;
     }
 

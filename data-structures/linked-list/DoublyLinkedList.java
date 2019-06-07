@@ -199,6 +199,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
         }
 
         Node<T> temp = this.traverse(index);
+        
         // edge cases
         if (index == 0) {
             this.head = this.head.next();

@@ -60,6 +60,7 @@ public class ArrayQueue<T> implements Queue<T> {
         if(this.back == 0) {
             throw new Exception("Queue is empty");
         }
+
         T temp = this.queue[front];
 
         for(int i = this.front; i < back; i++) {
@@ -81,6 +82,7 @@ public class ArrayQueue<T> implements Queue<T> {
         if(this.back == 0) {
             throw new Exception("Queue is empty");
         }
+
         return this.queue[this.front];
     }
 
@@ -102,6 +104,7 @@ public class ArrayQueue<T> implements Queue<T> {
         if (this.isEmpty()) {
             return "FRONT -- [] -- BACK";
         }
+        
         String s = "FRONT -- [" + this.queue[0];
         for(int i = 1; i < this.back; i++) {
             s += ", " + this.queue[i];
