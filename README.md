@@ -6,4 +6,4 @@
 
 ### [Linked List](linked-list)
 
-# Algorithms
+# algorithms
