@@ -36,24 +36,16 @@ Worst case: *O(n<sup>2</sup>)*
 
 Proof: 
     When: 
-        *i = 1*, 0 comparisons
+        *i* *=* *1*, 0 comparisons
 
-        *i = 2*, one comparison
+        *i* *=* *2*, one comparison
 
-        *i = 3*, two comparisons, and so on 
+        *i* *=* *3*, two comparisons, and so on 
     
-    Thus, when *i = m*, *m - 1* comparisons are made
+    Thus, when *i* *=* *m*, *m* *-* *1* comparisons are made
 
-    Then for an array of length *n*, bubble sort does *1 + 2 + 3 + ... + (n - 1)* comparisons
+    Then for an array of length *n*, bubble sort does *1* *+* *2* *+* *3* *+* *...* *+* *(n - 1)* comparisons
 
-    Using &sum; <sup><sup>p</sup></sup><sub>k=1</sub> 
+    Using &sum; <
 
-    q=1
-∑
-p
-​	
- q= 
-2
-p(p+1)
-​	
  
