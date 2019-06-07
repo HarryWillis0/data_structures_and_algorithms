@@ -2,7 +2,8 @@
 
 ### Definition
 Input: An array, A, with n orderable elements A[0..n-1]
-\nOutput: A sorted ordering of A
+
+Output: A sorted ordering of A
 
 ### Description
 * bubble sort works by repeatedly iterating through a collection of elements
