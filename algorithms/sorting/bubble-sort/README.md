@@ -32,6 +32,6 @@ Output: A sorted ordering of A
 
 
 ### Runtime
-*O*(n^2)
+*O*(n<sup>2</sup>)
 
 Proof: 
