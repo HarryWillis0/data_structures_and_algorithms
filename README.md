@@ -5,3 +5,5 @@
 ### [Queue](queue)
 
 ### [Linked List](linked-list)
+
+# Algorithms
