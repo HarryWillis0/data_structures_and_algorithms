@@ -11,6 +11,7 @@ Output: A sorted ordering of A
 * termination happens when a pass over the collection occurs with no swaps
 
 ### Psuedocode
+
 function bubbleSort(int[] array) {
     
     while (array is not sorted) {
