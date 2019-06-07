@@ -37,7 +37,7 @@ Worst case: *O(n<sup>2</sup>)*
 Proof: 
     
     When: 
-        | *i = 1*, zero comparisons
+    |    *i = 1*, zero comparisons
 
         |*i = 2*, one comparison
 
