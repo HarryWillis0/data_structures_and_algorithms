@@ -38,9 +38,9 @@ Proof:
     
 * When *i = 1* -> zero comparisons 
 
-       *i = 2* -> one comparison 
+    * *i = 2* -> one comparison 
 
-       *i = 3* -> two comparisons, and so on 
+    * *i = 3* -> two comparisons, and so on 
 
 * Thus, when *i = m*, *m - 1* comparisons are made
 
