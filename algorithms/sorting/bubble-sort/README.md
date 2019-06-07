@@ -12,23 +12,23 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
 
 ### Pseudocode
 
-    function bubbleSort(int[] array) {
+    function bubbleSort(int[] array)
         
-        while (array is not sorted) {
+        while (array is not sorted) 
         
-            for (each adjacent elements) {
+            for (each adjacent elements) 
          
-                if (elements out of order) {
+                if (elements out of order) 
          
                     swap elements
          
-                }
+                end if
         
-            }
+            end for
     
-        }
+        end while
 
-    } 
+    end func
 
 
 ### Runtime
