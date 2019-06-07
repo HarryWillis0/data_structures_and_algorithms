@@ -10,7 +10,7 @@ Output: *A* sorted ordering of *A*, such that *A[0] &le; A[1] ... &le; A[n - 1]*
 * it compares adjacent elements and swaps them if they are in the wrong order
 * termination happens when a pass over the collection occurs with no swaps
 
-### Psuedocode
+### Pseudocode
 
     function bubbleSort(int[] array) {
         
