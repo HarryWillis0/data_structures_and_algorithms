@@ -12,13 +12,21 @@ Output: A sorted ordering of A
 
 ### Psuedocode
 function bubbleSort(int[] array) {
+    
     while (array is not sorted) {
+        
         for (each adjacent elements) {
+         
             if (elements out of order) {
+         
                 swap elements
+         
             }
+        
         }
+    
     }
+
 } 
 
 
