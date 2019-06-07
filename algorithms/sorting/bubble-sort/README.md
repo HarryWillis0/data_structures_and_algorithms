@@ -48,7 +48,7 @@ Then for an array of length *n*, bubble sort does *1 + 2 + 3 + ... + (n - 1)* co
 
 This is equal to *n(n - 1)* &divide; *2* 
 
-Which is equal to *O(n<sup>2</sup>)
+Which is equal to *O(n<sup>2</sup>)*
     
 
  
