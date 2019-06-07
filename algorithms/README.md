@@ -1,3 +1,3 @@
 # algorithms
 
-### Sorting
+### [Sorting](sorting)
