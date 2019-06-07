@@ -48,11 +48,4 @@ Proof:
 
 * This is equal to *n(n - 1)* &divide; *2* 
 
-<<<<<<< HEAD
 * Which is equal to *O(n<sup>2</sup>)*
-    
-
- 
-=======
-* Which is equal to *O(n<sup>2</sup>)*
->>>>>>> 556da6a... finished bubblesort readme.md
