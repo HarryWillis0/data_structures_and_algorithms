@@ -14,14 +14,14 @@
       */
     public static void bubbleSort(int[] array) {
         // sorted flag
-        boolean swap = true;
+        boolean swapped = true;
 
-        while (swap) {
-            swap = false;
+        while (swapped) {
+            swapped = false;
 
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
-                    swap = true;
+                    swapped = true;
 
                     //swap
                     int temp = array[i];
