@@ -4,19 +4,25 @@
  * @author Harry Willis
  */
 public class InsertionSort {
-    public static void insertionSort(int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            int curr = a[i];
+    /**
+     * insertionSort(int[] array)
+     * insertion sort iterates through the array picking an element
+     *  and shifting it to its correct spot
+     * @param int array to be sorted
+     */
+    public static void insertionSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int curr = array[i];
             
             int j = i - 1;
 
-            while (j >= 0 && a[j] > curr) {
+            while (j >= 0 && array[j] > curr) {
                 // shift item
-                a[j + 1] = a[j];
+                array[j + 1] = array[j];
                 j--;
             }
 
-            a[j + 1] = curr;
+            array[j + 1] = curr;
         }
     }
 }
