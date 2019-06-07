@@ -1,9 +1,9 @@
 # Bubble Sort
 
 ### Definition
-Input: An array, A, with n orderable elements *A[0...n-1]*
+Input: An array, *A*, with n orderable elements *A[0...n-1]*
 
-Output: A sorted ordering of *A*, such that *A[0] &le; A[1]... &le; A[n-1]* 
+Output: *A* sorted ordering of *A*, such that *A[0] &le; A[1]... &le; A[n-1]* 
 
 ### Description
 * bubble sort works by repeatedly iterating through a collection of elements
@@ -32,6 +32,6 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1]... &le; A[n-1]*
 
 
 ### Runtime
-Worst case: *O*(n<sup>2</sup>)
+Worst case: *O(n<sup>2</sup>)*
 
 Proof: 
