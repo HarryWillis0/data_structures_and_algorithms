@@ -309,7 +309,7 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             return this.head;
         }
         
-        while (index-- > 0 && temp.next()  != null) {
+        while (index-- > 0 && temp.next() != null) {
             temp = temp.next();
         }
         
