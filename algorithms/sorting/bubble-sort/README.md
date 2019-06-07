@@ -12,23 +12,23 @@ Output: A sorted ordering of A
 
 ### Psuedocode
 
-function bubbleSort(int[] array) {
-    
-    while (array is not sorted) {
+    function bubbleSort(int[] array) {
         
-        for (each adjacent elements) {
+        while (array is not sorted) {
+        
+            for (each adjacent elements) {
          
-            if (elements out of order) {
+                if (elements out of order) {
          
-                swap elements
+                    swap elements
          
+                }
+        
             }
-        
-        }
     
-    }
+        }
 
-} 
+    } 
 
 
 ### Runtime
