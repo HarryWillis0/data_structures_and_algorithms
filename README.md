@@ -7,3 +7,5 @@
 ### [Linked List](linked-list)
 
 # algorithms
+
+### [Sorting](algorithms/sorting)
