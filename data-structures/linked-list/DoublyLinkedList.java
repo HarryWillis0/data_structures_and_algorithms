@@ -73,6 +73,13 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             return;
         }
 
+        // add at head
+        if (index == 0) {
+            this.head = new Node<T>(item, null, this.head);
+            this.size++;
+            return;
+        } 
+
         Node<T> temp = this.traverse(index);
 
         Node<T> newNode = new Node<T>(item, temp.prev(), temp);
@@ -214,6 +221,8 @@ public class DoublyLinkedList<T extends Object> implements LinkedList<T>{
             temp.prev().setNext(temp.next());
         }
         
+        this.size--;
+
         return temp.getData();
     }
 
