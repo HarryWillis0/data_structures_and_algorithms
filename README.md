@@ -1,10 +1,10 @@
 # data-structures
 
-### [Stack](data-structures/stack)
+### [Stack](data_structures/stack)
 
-### [Queue](data-structures/queue)
+### [Queue](data_structures/queue)
 
-### [Linked List](data-structures/linked-list)
+### [Linked List](data_structures/linked_list)
 
 # algorithms
 
