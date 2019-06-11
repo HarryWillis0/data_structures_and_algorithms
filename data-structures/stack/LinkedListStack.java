@@ -4,6 +4,24 @@
  * @author Harry Willis
  */
 public class LinkedListStack<T extends Object> implements Stack<T> {
+    
+    private SinglyLinkedList<T> stack;
+    
+    /**
+     * Construct default empty stack
+     */
+    public LinkedListStack() {
+        this.stack = new SinglyLinkedList<T>();
+    }
+
+    /**
+     * Construct stack with specified first element
+     * @param item for first element
+     */
+    public LinkedListStack(T item) {
+        this.stack = new SinglyLinkedList<T>(item);
+    }
+
     /**
      * isEmpty()
      * Test if stack is empty
@@ -11,7 +29,7 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @return True if empty, False otherwise
      */
     public boolean isEmpty() {
-        return false;
+        return this.stack.size() == 0;
     }
 
     /**
@@ -20,7 +38,11 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @throws exception if stack empty 
      */
     public T peek() throws Exception {
-        return null;
+        if (this.stack.size() == 0) {
+            throw new Exception("Stack is empty");
+        }
+
+        return this.stack.get(this.stack.size() - 1);
     }
 
     /**
@@ -30,7 +52,11 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @throws exception if stack empty
      */
     public T pop() throws Exception {
-        return null;
+        if (this.stack.size() == 0) {
+            throw new Exception("Stack is empty");
+        }
+
+        return this.stack.remove(this.stack.size() - 1);
     }
 
     /**
@@ -39,7 +65,9 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @return item
      */
     public T push(T item) {
-        return null;
+        this.stack.add(item);
+        
+        return item;
     }
     
     /**
@@ -50,7 +78,13 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @throws exception if stack is empty
      */
     public int search(T item) throws Exception {
-        return -1;
+        int dist = this.stack.indexOf(item);
+
+        if (dist == -1) {
+            return -1;
+        }
+        
+        return (this.stack.size() - 1) - dist;
     }
 
     /**
@@ -59,6 +93,6 @@ public class LinkedListStack<T extends Object> implements Stack<T> {
      * @return stack in string
      */
     public String toString() {
-        return null;
+        return "BOTTOM -- " + this.stack.toString() + " -- TOP";
     }
 }
