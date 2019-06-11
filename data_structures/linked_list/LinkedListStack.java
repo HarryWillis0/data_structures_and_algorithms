@@ -3,7 +3,7 @@
  * 
  * @author Harry Willis
  */
-public class LinkedListStack<T extends Object> implements Stack<T> {
+public class LinkedListStack<T extends Object> {
     
     private SinglyLinkedList<T> stack;
     
