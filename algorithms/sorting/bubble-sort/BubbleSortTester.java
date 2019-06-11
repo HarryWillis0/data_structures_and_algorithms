@@ -19,7 +19,6 @@ public class BubbleSortTester {
         BubbleSort.bubbleSort(intArray2);
         System.out.println("Sorted: " + Arrays.toString(intArray2) + "\n");
         
-        
         //already sorted
         int[] intArray3 = {1, 3, 55, 9999, 1001010};
         System.out.println("Bubble sorting: " + Arrays.toString(intArray3));
@@ -36,7 +35,6 @@ public class BubbleSortTester {
         int[] intArray5 = {-9, 3, 55, -9, 2};
         System.out.println("Bubble sorting: " + Arrays.toString(intArray5));
         BubbleSort.bubbleSort(intArray5);
-        System.out.println("Sorted: " + Arrays.toString(intArray5));
-        
+        System.out.println("Sorted: " + Arrays.toString(intArray5));  
     }
 }
