@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 /**
  * Tester program for InsertionSort.java
  * 
@@ -17,7 +18,6 @@ public class InsertionSortTester {
         System.out.println("Insertion sorting: " + Arrays.toString(intArray2));
         InsertionSort.insertionSort(intArray2);
         System.out.println("Sorted: " + Arrays.toString(intArray2) + "\n");
-
 
         //already sorted
         int[] intArray3 = {1, 3, 55, 9999, 1001010};
