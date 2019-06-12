@@ -78,6 +78,7 @@ public class SinglyLinkedList<T extends Object> implements LinkedList<T> {
             return;
         }
 
+        // since we are only using 'next' links, we have to use the node before index
         Node<T> tempPrev = this.traverse(index - 1);
 
         Node<T> newNode = new Node<T>(item, null, tempPrev.next());
@@ -195,16 +196,13 @@ public class SinglyLinkedList<T extends Object> implements LinkedList<T> {
     public T remove(int index) throws Exception {
         if (this.size == 0) {
             throw new Exception("List empty");
-
         } 
         
         if (index < 0 || index >= this.size) {
             throw new Exception("Invalid index");
         }
 
-        // temps
-        Node<T> tempPrev = this.traverse(index - 1);
-        Node<T> temp = tempPrev.next();
+        Node<T> temp = this.traverse(index);
         
         // head edge case
         if (index == 0) {
@@ -212,10 +210,13 @@ public class SinglyLinkedList<T extends Object> implements LinkedList<T> {
             
         // tail edge case
         } else if (index == this.size - 1) {
+            // since we are only using 'next' links, we have to use the node before index
+            Node<T> tempPrev = this.traverse(index - 1);
             this.tail = tempPrev;
             tempPrev.setNext(null);
 
         } else {
+            Node<T> tempPrev = this.traverse(index - 1);
             tempPrev.setNext(tempPrev.next().next());
         }
         
@@ -260,7 +261,9 @@ public class SinglyLinkedList<T extends Object> implements LinkedList<T> {
         if (this.size == 0) {
             throw new Exception("List empty");
 
-        } else if (i < 0 || i >= this.size || j < 0 || j >= this.size || i == j) {
+        }
+        
+        if (i < 0 || i >= this.size || j < 0 || j >= this.size || i == j) {
             throw new Exception("Invalid index(s)");
         }
 
