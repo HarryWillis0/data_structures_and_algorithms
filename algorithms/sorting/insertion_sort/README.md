@@ -49,7 +49,7 @@ Proof:
 
 * Thus, when *i = m*, *m - 1* comparisons are made
 
-* Then for an array of length *n*, bubble sort does *1 + 2 + 3 + ... + (n - 1)* comparisons
+* Then for an array of length *n*, insertion sort does *1 + 2 + 3 + ... + (n - 1)* comparisons
 
 * This is equal to *n(n - 1)* &divide; *2* 
 
