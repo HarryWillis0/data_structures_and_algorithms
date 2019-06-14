@@ -6,9 +6,9 @@ Input: An array, *A*, with *n* orderable elements *A[0 ... n - 1]*
 Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 1]* 
 
 ### Description
-* bubble sort works by repeatedly iterating through a collection of elements
-* it compares adjacent elements and swaps them if they are in the wrong order
-* termination happens when a pass over the collection occurs with no swaps
+* Bubble sort works by repeatedly iterating through a collection of elements
+* It compares adjacent elements and swaps them if they are in the wrong order
+* Termination happens when a pass over the collection occurs with no swaps
 
 ### Pseudocode
 
