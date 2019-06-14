@@ -10,3 +10,6 @@
 
 ### LinkedListStack
     * implements a stack using a singly linked list
+
+### LinkedListQueue
+    * implements a queue using a singly linked list
