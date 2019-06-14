@@ -18,13 +18,13 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
 
     function mergeSort(int[] array)
 
-        if (array.length &le; 2)
+        if (array.length <= 2)
             
             return
         
         end if
 
-        int mid <- array.length &divide; 2
+        int mid <- array.length / 2
 
         int[] low <- int[mid]
 
@@ -48,7 +48,7 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
 
         while (i &le; begin and j &le; end) 
 
-            if (low[i] &le; high[j])
+            if (low[i] <= high[j])
                 
                 array[k++] <- low[i++]
             
@@ -60,13 +60,13 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
         
         end while
 
-        while (i &lt; begin)
+        while (i < begin)
             
             array[k++] <- low[i++]
         
         end while
 
-        while (j &lt; end)
+        while (j < end)
 
             array[k++] <- high[j++]
         end while
@@ -78,11 +78,11 @@ Worst case: *O(nlog(n))* (In fact, this is the time complexity of all cases, bes
 
 Proof:
 
-* The divide step computes the midpoint of each sub-array takes constant time, *O(1)*
+* The divide step computes the midpoint of each sub-array, which takes constant time, *O(1)*
 
 * The conquer step sorts two sub-arrays of length *n / 2* each 
-    * An array of length *n* can only be halved *log(n)* times, thus, mergesort, at worst, conquers *log(n)* sub-arrays 
+    * An array of length *n* can only be halved *log(n)* times, so there are *log(n)* sub-arrays to sort
 
 * The merge step iterates over *n* elements of the sub-arrays, which takes *O(n)* time
 
-* Thus, for each of the *log(n)* sub-arrays we iterate the *n* elements to merge, resulting in *O(nlog(n))* time 
+* Thus, for each of the *log(n)* sub-arrays we iterate the *n* elements in order to merge them, resulting in *O(nlog(n))* time 
