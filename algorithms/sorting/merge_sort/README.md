@@ -18,7 +18,7 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
 
     function mergeSort(int[] array)
 
-        if (array.length <= 2)
+        if (array.length < 2)
             
             return
         
@@ -46,7 +46,7 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
 
         int i, j, k <- 0
 
-        while (i &le; begin and j &le; end) 
+        while (i < begin and j < end) 
 
             if (low[i] <= high[j])
                 
@@ -69,6 +69,7 @@ Output: A sorted ordering of *A*, such that *A[0] &le; A[1] &le; ... &le; A[n - 
         while (j < end)
 
             array[k++] <- high[j++]
+        
         end while
 
     end func
